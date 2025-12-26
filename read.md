@@ -1,3 +1,6 @@
+# Install vibium
+npm install vibium
+
 # Setup MCP server
 npm install -g @anthropic-ai/claude-code
 
