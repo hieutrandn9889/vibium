@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "scripts": {
+ "scripts": {
     "testTs": "tsx tests/first.test.ts",
-    "testJs": "node tests/first.test.js"
+    "testJs": "node tests/first.test.js",
+    "mcp:list": "claude mcp list",
+    "mcp:add:vibium": "claude mcp add vibium \"npx -y vibium --project-path D:\\AI\\vibiumTest\""
   },
   "keywords": [],
   "author": "",
@@ -15,5 +17,8 @@
     "@types/node": "^25.0.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
- }
+  },
+  "dependencies": {
+    "vibium": "^0.1.2"
+  }
 }
