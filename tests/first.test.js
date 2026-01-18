@@ -1,7 +1,7 @@
 // tests/first.test.js
 
 // 1. Nhập toàn bộ đối tượng xuất khẩu mặc định (default export)
-import * as vibium from '../../index.js'; // Import from local index.js
+import * as vibium from '../index.js'; // Import from local index.js
 
 // 2. Trích xuất đối tượng 'browser' hoặc 'browserSync'
 // Đối với Async API:
