@@ -2,10 +2,9 @@
   "name": "vibium",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
- "scripts": {
-    "testTs": "tsx tests/first.test.ts",
-    "testJs": "node tests/first.test.js",
+  "main": "index.js",
+  "scripts": {
+    "testJs": "node vibiumJS/tests/first.test.js",
     "mcp:list": "claude mcp list",
     "mcp:add:vibium": "claude mcp add vibium \"npx -y vibium --project-path D:\\AI\\vibiumTest\""
   },
@@ -20,5 +19,8 @@
   },
   "dependencies": {
     "vibium": "^0.1.3"
+  },
+  "optionalDependencies": {
+    "@vibium/win32-x64": "^0.1.3"
   }
 }

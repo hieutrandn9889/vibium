@@ -1,6 +1,7 @@
-// tests/first.test.ts
+// tests/first.test.js
 
-import * as vibium from "../index.js"; // Import from local index.ts
+// 1. Nhập toàn bộ đối tượng xuất khẩu mặc định (default export)
+import * as vibium from '../../index.js'; // Import from local index.js
 
 // 2. Trích xuất đối tượng 'browser' hoặc 'browserSync'
 // Đối với Async API:
@@ -14,7 +15,7 @@ async function runTest() {
     console.log("Launching Vibium browser...");
     const vibe = await browser.launch();
     
-    await vibe.go("https://momo.com");
+    await vibe.go("https://momo.vn");
     console.log("Navigated to momo.com");
     
     const heading = await vibe.find("h1");
