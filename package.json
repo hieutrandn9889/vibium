@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "testJs": "node tests/first.test.js",
+    "testEnouvo": "node tests/enouvo.test.js",
     "mcp:list": "claude mcp list",
     "mcp:add:vibium": "claude mcp add vibium \"npx -y vibium --project-path D:\\AI\\vibiumTest\""
   },
