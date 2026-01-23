@@ -6,6 +6,7 @@ import * as vibium from '../index.js'; // Import from local index.js
 // 2. Trích xuất đối tượng 'browser' hoặc 'browserSync'
 // Đối với Async API:
 const browser = vibium.browser;
+const fs = await import('fs/promises')
 
 // Đối với Sync API (Nếu bạn chọn dùng nó):
 // const browserSync = vibium.browserSync; 
@@ -26,7 +27,9 @@ async function runTest() {
     } else {
         console.error("TEST FAILED: Incorrect heading text.");
     }
-
+    const png = await vibe.screenshot()
+    
+    await fs.writeFile('screenshot.png', png)
     await vibe.quit();
 }
 
