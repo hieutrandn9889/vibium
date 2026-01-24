@@ -1,7 +1,25 @@
-// tests/enouvo.test.js - Enouvo.com automation test using Vibium
-import * as vibium from '../index.js';
+// tests/enouvo.test.ts - Enouvo.com automation test using Vibium
+import * as vibium from '../../index.js';
 
-const browser = vibium.browser;
+// Define types for the vibium objects
+interface VibiumElement {
+  text: () => Promise<string>;
+  click: () => Promise<void>;
+  type: (text: string) => Promise<void>;
+}
+
+interface VibiumBrowserInstance {
+  go: (url: string) => Promise<void>;
+  find: (selector: string, options?: any) => Promise<VibiumElement>;
+  screenshot: () => Promise<Buffer>;
+  quit: () => Promise<void>;
+}
+
+interface VibiumBrowser {
+  launch: (options?: any) => Promise<VibiumBrowserInstance>;
+}
+
+const browser = vibium.browser as VibiumBrowser;
 
 async function runTest() {
     console.log("🚀 Launching Vibium browser...");
@@ -38,7 +56,7 @@ async function runTest() {
         console.log("✅ TEST PASSED: Successfully navigated to enouvo.com and clicked Home menu");
         console.log("   Screenshot captured for verification");
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("❌ Test error occurred:", error.message);
         console.error(error);
     } finally {
