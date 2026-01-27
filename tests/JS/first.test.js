@@ -17,7 +17,7 @@ async function runTest() {
     const vibe = await browser.launch();
     
     await vibe.go("https://momo.vn");
-    console.log("Navigated to momo.com");
+    console.log("Navigated to momo.vn");
     
     const heading = await vibe.find("h1");
     
