@@ -4,7 +4,8 @@
       "command": "npx",
       "args": [
         "-y",
-        "vibium"
+        "vibium",
+        "mcp"
       ]
     }
   }

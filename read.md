@@ -14,3 +14,8 @@ File modified: C:\Users\hieu.tran8\.claude.json [project: D:\AI\vibiumTest]
 
 # check mcp 
 claude mcp list
+
+# run mcp gemini
+gemini mcp list
+Take a screenshot of https://momo.vn
+
