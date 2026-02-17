@@ -12,7 +12,6 @@
     "testTs": "tsx tests/TS/first.test.ts",
     "testEnouvo": "node tests/JS/enouvo.test.js",
     "testEnouvoTs": "tsx tests/TS/enouvo.test.ts",
-    "testGoogleTs": "tsx tests/TS/google.ts",
     "mcp:list": "claude mcp list",
     "mcp:add:vibium": "claude mcp add vibium \"npx -y vibium --project-path D:\\AI\\vibiumTest\"",
     "prepublishOnly": "npm run build"
