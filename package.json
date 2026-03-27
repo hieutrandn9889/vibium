@@ -26,9 +26,9 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "vibium": "^0.1.8"
+    "vibium": "^26.3.18"
   },
   "optionalDependencies": {
-    "@vibium/win32-x64": "^0.1.8"
+    "@vibium/win32-x64": "^26.3.18"
   }
 }
