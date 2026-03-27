@@ -11,7 +11,7 @@ export class PageObject {
     }
 
     protected async runVibium(args: string[]): Promise<{ code: number; stdout: string; stderr: string }> {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             const proc = spawn('npx', ['vibium', ...args], { 
                 shell: true,
                 stdio: ['pipe', 'pipe', 'pipe']
@@ -20,14 +20,21 @@ export class PageObject {
             let stderr = '';
             proc.stdout.on('data', d => stdout += d);
             proc.stderr.on('data', d => stderr += d);
-            proc.on('close', code => resolve({ code, stdout, stderr }));
+            proc.on('close', code => {
+                if (code !== 0) {
+                    const errorMessage = `Vibium command failed with code ${code}.\nStdout: ${stdout}\nStderr: ${stderr}`;
+                    console.error(errorMessage);
+                    return reject(new Error(errorMessage)); // Reject the promise on error
+                }
+                resolve({ code, stdout, stderr });
+            });
         });
     }
 
     async open(): Promise<void> {
         await this.runVibium(['start']);
         await this.runVibium(['go', this.url]);
-        await new Promise(r => setTimeout(r, 2000));
+        await this.runVibium(['wait', 'load']);
     }
 
     async close(): Promise<void> {
