@@ -6,7 +6,10 @@
         "-y",
         "vibium",
         "mcp"
-      ]
+      ],
+      "env": {
+        "VIBIUM_ARCH": "win32-x64"
+      }
     }
   }
 }

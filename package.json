@@ -8,10 +8,8 @@
     "build": "tsc",
     "dev": "tsx index.ts",
     "start": "node dist/index.js",
-    "testJs": "node tests/JS/first.test.js",
-    "testTs": "tsx tests/TS/first.test.ts",
-    "testEnouvo": "node tests/JS/enouvo.test.js",
-    "testEnouvoTs": "tsx tests/TS/enouvo.test.ts",
+    "test:pom:enouvo": "tsx tests/TS/enouvo-pom.test.ts",
+    "test:generate": "tsx generate-page.cjs",
     "mcp:list": "claude mcp list",
     "mcp:add:vibium": "claude mcp add vibium \"npx -y vibium --project-path D:\\AI\\vibiumTest\"",
     "prepublishOnly": "npm run build"
